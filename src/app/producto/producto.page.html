@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ producto._id ? 'Editar Producto' : 'Nuevo Producto' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Presupuesto</ion-label>
+      <ion-input type="number" [(ngModel)]="producto.presupuesto" required></ion-input>
+      <ion-note *ngIf="!producto.presupuesto">El presupuesto es requerido</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Unidad</ion-label>
+      <ion-input [(ngModel)]="producto.unidad" required></ion-input>
+      <ion-note *ngIf="!producto.unidad">La unidad es requerida</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Producto</ion-label>
+      <ion-input [(ngModel)]="producto.producto" required></ion-input>
+      <ion-note *ngIf="!producto.producto">El producto es requerido</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Cantidad</ion-label>
+      <ion-input type="number" [(ngModel)]="producto.cantidad" required></ion-input>
+      <ion-note *ngIf="!producto.cantidad">La cantidad es requerida</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Valor Unitario</ion-label>
+      <ion-input type="number" [(ngModel)]="producto.valorUnitario" required></ion-input>
+      <ion-note *ngIf="!producto.valorUnitario">El valor unitario es requerido</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Valor Total</ion-label>
+      <ion-input type="number" [(ngModel)]="producto.valorTotal" required></ion-input>
+      <ion-note *ngIf="!producto.valorTotal">El valor total es requerido</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Fecha de Adquisición</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="producto.fechaAdquisicion" required></ion-datetime>
+      <ion-note *ngIf="!producto.fechaAdquisicion">La fecha de adquisición es requerida</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Proveedor</ion-label>
+      <ion-input [(ngModel)]="producto.proveedor" required></ion-input>
+      <ion-note *ngIf="!producto.proveedor">El proveedor es requerido</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="guardarProducto()">Guardar</ion-button>
+  <ion-button *ngIf="producto._id" expand="full" color="danger" (click)="eliminarProducto()">Eliminar</ion-button>
+</ion-content>

@@ -1,0 +1,26 @@
+ion-content {
+    --background: #f4f4f4; /* Color de fondo */
+  }
+  
+  ion-list {
+    background-color: #ffffff; /* Color de fondo de la lista */
+    border-radius: 10px; /* Borde redondeado */
+    margin-bottom: 20px; /* Margen inferior */
+  }
+  
+  ion-item {
+    border: none; /* Eliminar borde de los elementos */
+  }
+  
+  ion-item ion-label {
+    font-weight: bold; /* Texto en negrita */
+  }
+  
+  ion-button {
+    margin-top: 20px; /* Margen superior para los botones */
+  }
+  
+  ion-button:last-child {
+    margin-bottom: 20px; /* Margen inferior solo para el último botón */
+  }
+  

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="recargarDatos()">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button>
+      <ion-button shape="round" color="primary" [routerLink]="['/producto']">Agregar Producto</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-searchbar [(ngModel)]="filtro" (ionInput)="filtrarProductos()"></ion-searchbar>
+    <ion-item *ngFor="let producto of productosFiltrados" [routerLink]="['/producto', producto._id]">
+      <ion-label>
+        <h2>{{ producto.producto }}</h2>
+        <p>Unidad: {{ producto.unidad }} | Presupuesto: {{ producto.presupuesto }} | Valor Total: {{ producto.valorTotal }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
